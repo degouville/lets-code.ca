@@ -1,0 +1,23 @@
+- const data = [['X1 100', 'ANIMUS', 'SPORTIVE'], ['Y2 002', 'ANNE', 'ELEGANCE'], ['X3 001', 'ALLOE', 'MODERNITY'], ['X1 002', 'ASTRA', 'SOPHISTIQ']]
+- const setNum = (e, i) => ({ ...e, num: i < 10 ? `0${ i + 1 }` : i + 1 })
+- const setData = p => ({ id: p[0], name: p[1], type: p[2] })
+- const products = data.map(setData).map(setNum)
+
+main#app
+  header
+    img(src="./public/close.svg").close
+    nav.nav
+      a(href="") 
+        img(src="./public/logo.svg")
+      a(href="") 
+        img(src="./public/menu.svg")
+  
+  section.products
+    each p in products
+      article.product(id=p.id.replace(' ', '_'))
+        .infos
+          .text
+            h4.id= p.id
+            h2.name= p.name
+            h2.type= p.type
+          h1.num= p.num
