@@ -58,7 +58,7 @@ body
       .product
         // d()
         flex 0 0 25vw
-        transition flex 1s ease-in-out 0.1s
+        transition flex 1s 0.1s cubic-bezier(.9, 0, .1, 1)
         position relative
         height 100vh
         display flex
